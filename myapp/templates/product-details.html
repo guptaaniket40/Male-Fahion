@@ -1,0 +1,84 @@
+{% extends 'header.html'%}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+     
+</head>
+
+<body>
+ 
+     
+    <!-- Shop Details Section Begin -->
+    <section class="shop-details">
+        <div class="product__details__pic">
+            <div class="container">
+                <div class="row">
+                    <div class="product__details__breadcrumb" style="margin-right: 100px;">
+                        <a style="font-size: larger;"><b>Product details</b></a><br>
+                        <a style="font-size: larger;" href="/">Home</a>
+                        <span style="font-size: larger;">Product Details</span>
+                    </div>
+                </div>
+                <div class="row">
+                   
+                    <div class="col-lg-3 col-md-3">
+                 </div>
+                    <div class="col-lg-6 col-md-9">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product__details__content">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="product__details__pic__item" style="margin-bottom: 150px; margin-left: 50px;">
+                            <img src="{{product.product_image.url}}" height="400px" width="400px" alt="">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product__details__text" style="margin-right: 300px; margin-top: 80px;">
+                            <h3> {{product.product_name}}</h3>
+                            <h2>{{product.product_price}} Rs</h2>
+                            <h5>{{product.product_desc}}</h5>
+
+                            {% if request.session.email %}
+                              {% if cart_flag == False %}
+
+                            <a href="{% url 'add-to-cart' pk=product.pk %}" class="primary-btn mt-4 me-3">Add to cart</a> 
+                            {% else %}
+                            
+                            <a href="{% url 'remove-from-cart' pk=product.pk %}" class="primary-btn mt-4 me-3">Remove from cart</a> 
+                            {% endif %}
+
+                            {% if wishlist_flag == False %}
+
+                            <a href="{% url 'add-to-wishlist' pk=product.pk %}" class="primary-btn" style="margin-top:20px;">Add to wishlist</a>
+                            {% else %}
+                            <a href="{% url 'remove-from-wishlist' pk=product.pk %}" class="primary-btn" style="margin-top:20px;"> Remove from wishlist</a>
+                            {% endif %}
+
+                            {% else %}
+                            <a class="main_btn" href="{% url 'login' %}">Login</a>
+                            {% endif %}
+                        </div>
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </section>
+    <!-- Shop Details Section End -->
+ 
+ 
+</body>
+</html>
+{% endblock %}
