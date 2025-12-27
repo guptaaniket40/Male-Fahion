@@ -150,10 +150,11 @@ def profile(request):
         user.mobile=request.POST['mobile']
         user.address=request.POST['address']
         try:
-            user.profile_picture=request.FILES['profile_picture']
+            user.profile_picture=request.FILES['profile_picture']   
         except:
             pass
         user.save()
+        request.session['fname']=user.fname
         request.session['profile_picture']=user.profile_picture.url
         msg="profile updated successfully" 
         if user.usertype=="buyer":

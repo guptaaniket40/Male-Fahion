@@ -9,6 +9,100 @@
 </head>
 
 <body>
+    <style>
+        /* Login Page Styling */
+
+.contact__form {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.contact__form b {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.contact__form input[type="text"],
+.contact__form input[type="password"] {
+    width: 100%;
+    height: 48px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.contact__form input:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.25);
+    outline: none;
+}
+
+.site-btn {
+    width: 100%;
+    background: #0f1113;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px;
+    border-radius: 6px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.site-btn:hover {
+    background: #121213;
+    transform: translateY(-2px);
+}
+
+/* Forgot Password Link */
+.contact__form a {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 14px;
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+.contact__form a:hover {
+    text-decoration: underline;
+}
+
+/* Breadcrumb Styling */
+.breadcrumb-option {
+    background: #f8f9fa;
+    padding: 40px 0;
+}
+
+.breadcrumb__text h4 {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.breadcrumb__links a {
+    color: #0d6efd;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.breadcrumb__links span {
+    color: #6c757d;
+    font-size: 14px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .contact__form {
+        padding: 25px;
+    }
+}
+
+    </style>
 
      <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-option">

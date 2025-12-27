@@ -74,8 +74,12 @@
                     <div class="col-lg-6 col-md-5">
                         <div class="header__top__right">
                             <div class="header__top__links">
-                                <a href="#">Sign in</a>
+                                 
+                                
+                                  
                                 <a href="#">FAQs</a>
+                              
+                                 
                             </div>
                             <div class="header__top__hover">
                                 <span>Usd <i class="arrow_carrot-down"></i></span>
@@ -117,6 +121,9 @@
                               <li><a href="#">Account</a>
                                 <ul class="dropdown">
                                     {% if request.session.email %}
+
+                                    <li><a href="{% url 'myorder' %}">My Order</a>
+                                    </li>
                                     
                                     <li><a href="{% url 'change-password' %}" style="padding-left: 1px; margin-left: 15px;">change password</a>
                                     </li>
@@ -144,10 +151,11 @@
                             </a>
                             
                             {% endif %}
-                        
+                        {% if request.session.email %}
+
                         <a href="{% url 'wishlist' %}"><img src=" {% static 'img/icon/heart.png' %}" alt="">({{request.session.wishlist_count}})</a>
                         <a href="{% url 'cart' %}"><img src=" {% static 'img/icon/cart.png' %}" alt=""> ({{request.session.cart_count}})</a>
-                        
+                        {% endif %}
                     </div>
                 </div>
             </div>
